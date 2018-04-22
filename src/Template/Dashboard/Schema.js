@@ -15,9 +15,35 @@ query {
 /**
  * PostTodos = Criar novo usuario
  */
-export const PostTodos = gql`
+export const createTodo = gql`
  mutation createTodo($email: String! , $name: String!){
   createTodo(email:$email,name:$name){
+     email
+     name
+   }
+ }
+`
+
+/**
+ * 
+ */
+export const getTodo = gql`
+query Todo($id: ID!) {
+  Todo(id: $id) {
+      id
+      email
+      name
+    }
+  }
+`;
+
+/**
+ * updateTodo = Atualizar clientes
+ */
+export const updateTodo = gql`
+ mutation updateTodo($id: ID! ,$email: String! , $name: String!){
+  updateTodo(id:$id, email:$email,name:$name){
+     id
      email
      name
    }

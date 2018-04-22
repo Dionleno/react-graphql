@@ -4,7 +4,7 @@ import { Link, Redirect } from 'react-router-dom'
  * GraphQl
  */
 import { graphql } from 'react-apollo';
-import { PostTodos } from './Schema';
+import { createTodo } from './Schema';
 
 
 export class Create extends Component {
@@ -57,7 +57,7 @@ export class Create extends Component {
 }
 
 
-export default graphql(PostTodos,{
+export default graphql(createTodo,{
     name: 'CreatePostTodos'
 })(Create);
 
