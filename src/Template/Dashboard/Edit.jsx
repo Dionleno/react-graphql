@@ -50,6 +50,7 @@ export class Edit extends Component {
                 if (loading) return null;
                 if (error) return `Error!: ${error}`;
                    
+                 
                     
                 return (
                     <div>
@@ -57,13 +58,15 @@ export class Edit extends Component {
                             <label for="">ID</label>
                             <input type="text" disabled class="form-control" value={data.Todo.id}  ref={input => (this.id = input)} placeholder="Input field" />
                         </div>
+
                         <div class="form-group">
                             <label for="">Nome</label>
-                            <input type="text" class="form-control" value={data.Todo.name} ref={input => (this.name = input)} placeholder="Input field" />
+                            <input type="text" class="form-control"  ref={input => (this.name = input)} placeholder={data.Todo.name} />
                         </div>
+
                         <div class="form-group">
                             <label for="">Email</label>
-                            <input type="text" class="form-control" value={data.Todo.email} ref={input => (this.email = input)} placeholder="Input field" />
+                            <input type="text" class="form-control" ref={input => (this.email = input)} placeholder={data.Todo.email} />
                         </div>
                         
                     </div>

@@ -4,7 +4,7 @@ import { Link, Redirect } from 'react-router-dom'
  * GraphQl
  */
 import { graphql } from 'react-apollo';
-import { createTodo } from './Schema';
+import { createTodo , AllListTodos } from './Schema';
 
 
 export class Create extends Component {
@@ -19,7 +19,8 @@ export class Create extends Component {
         variables:{
             email: this.email.value,
             name: this.name.value
-        }
+        },
+         refetchQueries: [ { query: AllListTodos }]
     }).then(resp => {
        this.props.history.push("/")
     }).catch(error => false)
@@ -38,11 +39,11 @@ export class Create extends Component {
                    
                     <div class="form-group">
                         <label for="">Nome</label>
-                        <input type="text" class="form-control" ref={input => (this.name = input)} placeholder="Input field" />
+                        <input type="text" class="form-control" ref={input => (this.name = input)} placeholder="Nome" />
                     </div>
                     <div class="form-group">
                         <label for="">Email</label>
-                        <input type="text" class="form-control" ref={input => (this.email = input)} placeholder="Input field" />
+                        <input type="text" class="form-control" ref={input => (this.email = input)} placeholder="Email" />
                     </div>
                     
                     <button type="submit" class="btn btn-success pull-right">Salvar</button>

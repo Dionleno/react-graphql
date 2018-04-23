@@ -26,7 +26,7 @@ export const createTodo = gql`
 `
 
 /**
- * 
+ * getTodo = buscar por ID
  */
 export const getTodo = gql`
 query Todo($id: ID!) {
@@ -50,3 +50,15 @@ export const updateTodo = gql`
    }
  }
 `
+
+/**
+ * DeleteTodo = deletar user 
+ */
+
+ export const DeleteTodo = gql`
+ mutation deleteTodo($id: ID!){
+   deleteTodo(id: $id){
+     id
+   }
+ }
+ `

@@ -1,5 +1,8 @@
 import React from 'react'
 import { Link, Redirect } from 'react-router-dom'
+import './style.css'
+
+
 export default props => {
 
     if(!props.list || props.list.length === 0){
@@ -10,8 +13,8 @@ export default props => {
         <ul class="list-group">
             { props.list.map(resp => (
                 <li class="list-group-item" key={resp.id}>
-                    <span class="pull-right">Edite</span>
-                    <span class="pull-right">delete</span>
+                    <Link class="btn btn-danger btn-xs pull-right spacing_button" to={`/delete/${resp.id}`}>Delete</Link>
+                    <Link class="btn btn-success btn-xs pull-right spacing_button" to={`/edit/${resp.id}`}>Edite</Link>
                     
                     <Link to={`/edit/${resp.id}`}>{resp.name}</Link>
                 </li>

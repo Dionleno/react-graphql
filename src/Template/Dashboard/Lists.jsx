@@ -27,7 +27,7 @@ class TodoApp extends Component {
                          <h2 class="panel-title">Lista de clientes</h2>
                     </div>
                    <div class="panel-body">
-                        <Link to='/cadastro' class="btn btn-info btn-xs pull-right">Adicionar novo</Link><br/><br/>
+                        <Link to='/cadastro' class="btn btn-info btn-xs pull-right ">Adicionar novo</Link><br/><br/>
                         {todos.loading ? "carregando" : <Lists list={this.props.todos.allTodoes}></Lists>}
                    </div>
              </div>
